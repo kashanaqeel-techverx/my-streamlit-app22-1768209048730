@@ -1,0 +1,17 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'build'
+      - '-t'
+      - 'gcr.io/sacred-portal-452319-e2/my-streamlit-app22:latest'
+      - '-f'
+      - 'Dockerfile'
+      - '.'
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args:
+      - 'push'
+      - 'gcr.io/sacred-portal-452319-e2/my-streamlit-app22:latest'
+
+images:
+  - 'gcr.io/sacred-portal-452319-e2/my-streamlit-app22:latest'
